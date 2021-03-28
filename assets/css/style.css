@@ -1,0 +1,77 @@
+.calculadora {
+    display: block;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: rgb(160, 136, 182);
+    width: 400px;
+    height: 500px;
+    border: 1px solid #000000;
+}
+
+.calculadora td div {
+    height: 15px;
+}
+
+.calculadora h1 {
+    margin-left: 10px;
+    font-family: Verdana, sans-serif;
+    color: black;
+    font-size: 16px;
+    font-weight: 10;
+    line-height: 0px;
+}
+
+.calculadora td button {
+    display: block;
+    width: 80px;
+    height: 60px;
+    font-size: 24px;
+    border: 1px solid #000000;
+    outline:none;
+}
+
+.calculadora span {
+    font-family: Verdana, sans-serif;
+    display: block;
+    font-size: 35px;
+    width: 320px;
+    height: 80px;
+    background-color: rgb(212, 209, 209);
+    margin-bottom: 10px;
+    border: 1px solid #000000;
+    line-height: 80px;
+    padding-left: 10px;
+}
+
+.numero:hover {
+    background-color: rgb(187, 163, 207);
+}
+
+.numero:active {
+    background-color: rgb(129, 98, 155);
+}
+
+.operador {
+    color: rgb(134, 72, 179);
+}
+
+.operador:hover {
+    background-color: rgb(227, 210, 241);
+}
+
+.operador:active {
+    background-color: rgb(183, 160, 202);
+}
+
+.accion {
+    color: white;
+    background-color: rgb(134, 72, 179);
+}
+
+.accion:hover {
+    background-color: rgb(101, 49, 138);
+}
+
+.accion:active {
+    background-color: rgb(85, 40, 117);
+}
