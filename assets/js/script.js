@@ -140,8 +140,8 @@ igual.addEventListener("click", () => {
         for (let i = 0; i < sumaArray.length; i++) {
             sumaArray[i] = parseFloat(sumaArray[i]);
         }
-        let sumatoria=sumaArray.reduce((acumulador, numero) => {
-            acumulador+numero;
+        let sumatoria = sumaArray.reduce((acumulador, numero) => {
+            return acumulador+numero;
         });
         resultado.innerText = sumatoria;
         return false;
@@ -151,7 +151,7 @@ igual.addEventListener("click", () => {
             restaArray[i] = parseFloat(restaArray[i]);
         }
         let reduccion=restaArray.reduce((acumulador, numero) => {
-            acumulador-numero;
+            return acumulador-numero;
         });
         resultado.innerText = reduccion;
         return false;
@@ -161,17 +161,17 @@ igual.addEventListener("click", () => {
             multiplicacionArray[i] = parseFloat(multiplicacionArray[i]);
         }
         let aplicarMultiplicacion=multiplicacionArray.reduce((acumulador, numero) => {
-            acumulador-numero;
+            return acumulador*numero;
         });
         resultado.innerText = aplicarMultiplicacion;
         return false;
-    } else if (calculo.innerText.includes("*")) {
+    } else if (calculo.innerText.includes("/")) {
         let divisionArray = calculo.innerText.split("/");
         for (let i = 0; i < divisionArray.length; i++) {
             divisionArray[i] = parseFloat(divisionArray[i]);
         }
         let aplicardivision=divisionArray.reduce((acumulador, numero) => {
-            acumulador-numero;
+            return acumulador/numero;
         });
         resultado.innerText = aplicardivision;
         return false;
