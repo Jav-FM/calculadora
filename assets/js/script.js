@@ -116,12 +116,8 @@ porcentaje.addEventListener("click", () => {
 });
 
 mayorMenor.addEventListener("click", () => {
-    if (resultado.innerText.value > 0) {
-    calculo.innerText = "-" + calculo.innerText;
-    resultado.innerText = "-" + resultado.innerText;
-    } else {
-        resultado.innerText = resultado.innerText.slice(1,resultad.innerText.lenght);
-    }
+    calculo.innerText = calculo.innerText*-1;
+    resultado.innerText = resultado.innerText*-1;
 });
 
 //eventos acciones
@@ -135,47 +131,52 @@ borrar.addEventListener("click", () => {
 });
 
 igual.addEventListener("click", () => {
-    if (calculo.innerText.includes("+")) {
-        let sumaArray = calculo.innerText.split("+");
-        for (let i = 0; i < sumaArray.length; i++) {
-            sumaArray[i] = parseFloat(sumaArray[i]);
-        }
-        let sumatoria = sumaArray.reduce((acumulador, numero) => {
-            return acumulador+numero;
-        });
-        resultado.innerText = sumatoria;
-        return false;
-    } else if (calculo.innerText.includes("-")) {
-        let restaArray = calculo.innerText.split("-");
-        for (let i = 0; i < restaArray.length; i++) {
-            restaArray[i] = parseFloat(restaArray[i]);
-        }
-        let reduccion=restaArray.reduce((acumulador, numero) => {
-            return acumulador-numero;
-        });
-        resultado.innerText = reduccion;
-        return false;
-    } else if (calculo.innerText.includes("*")) {
-        let multiplicacionArray = calculo.innerText.split("*");
-        for (let i = 0; i < multiplicacionArray.length; i++) {
-            multiplicacionArray[i] = parseFloat(multiplicacionArray[i]);
-        }
-        let aplicarMultiplicacion=multiplicacionArray.reduce((acumulador, numero) => {
-            return acumulador*numero;
-        });
-        resultado.innerText = aplicarMultiplicacion;
-        return false;
-    } else if (calculo.innerText.includes("/")) {
-        let divisionArray = calculo.innerText.split("/");
-        for (let i = 0; i < divisionArray.length; i++) {
-            divisionArray[i] = parseFloat(divisionArray[i]);
-        }
-        let aplicardivision=divisionArray.reduce((acumulador, numero) => {
-            return acumulador/numero;
-        });
-        resultado.innerText = aplicardivision;
-        return false;
-    } else {
-        return false;
-    };
+
+    let resultadoFinal = eval(calculo.innerText);
+    resultado.innerText = resultadoFinal;
+
+    // ESTE CODIGO TAMBIEN FUNCIONA, PERO LO REDUJE A DOS LINEAS GRACIAS A EVAL()
+    //if (calculo.innerText.includes("+")) {
+    //     let sumaArray = calculo.innerText.split("+");
+    //     for (let i = 0; i < sumaArray.length; i++) {
+    //         sumaArray[i] = parseFloat(sumaArray[i]);
+    //     }
+    //     let sumatoria = sumaArray.reduce((acumulador, numero) => {
+    //         return acumulador+numero;
+    //     });
+    //     resultado.innerText = sumatoria;
+    //     return false;
+    // } else if (calculo.innerText.includes("-")) {
+    //     let restaArray = calculo.innerText.split("-");
+    //     for (let i = 0; i < restaArray.length; i++) {
+    //         restaArray[i] = parseFloat(restaArray[i]);
+    //     }
+    //     let reduccion=restaArray.reduce((acumulador, numero) => {
+    //         return acumulador-numero;
+    //     });
+    //     resultado.innerText = reduccion;
+    //     return false;
+    // } else if (calculo.innerText.includes("*")) {
+    //     let multiplicacionArray = calculo.innerText.split("*");
+    //     for (let i = 0; i < multiplicacionArray.length; i++) {
+    //         multiplicacionArray[i] = parseFloat(multiplicacionArray[i]);
+    //     }
+    //     let aplicarMultiplicacion=multiplicacionArray.reduce((acumulador, numero) => {
+    //         return acumulador*numero;
+    //     });
+    //     resultado.innerText = aplicarMultiplicacion;
+    //     return false;
+    // } else if (calculo.innerText.includes("/")) {
+    //     let divisionArray = calculo.innerText.split("/");
+    //     for (let i = 0; i < divisionArray.length; i++) {
+    //         divisionArray[i] = parseFloat(divisionArray[i]);
+    //     }
+    //     let aplicardivision=divisionArray.reduce((acumulador, numero) => {
+    //         return acumulador/numero;
+    //     });
+    //     resultado.innerText = aplicardivision;
+    //     return false;
+    // } else {
+    //     return false;
+    // };
 });
